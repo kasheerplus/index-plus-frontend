@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green: #11763A;
+  --color-brand-green-alt: #0d5a2c;
+  --color-brand-blue: #1B2531;
+  --color-brand-blue-alt: #2c3e50;
+  --color-brand-off-white: #F8F7F5;
+  --color-brand-beige: #F3F1ED;
+  --color-brand-gold: #c5a059;
+
+  --font-cairo: "Cairo", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --radius-xl: 12px;
+  --radius-2xl: 20px;
+  --radius-3xl: 30px;
+
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+:root {
+  /* Index Plus Brand Variables - Legacy Mappings */
+  --primary: #11763A;
+  --primary-hover: #0d5a2c;
+  --primary-dark: #11763A;
+
+  --accent: #1B2531;
+  --accent-hover: #2c3e50;
+  --accent-light: #2c3e50;
+
+  --light: #FFFFFF;
+  --background: #F8F7F5;
+  --text-light: #FFFFFF;
+  --card-bg: #FFFFFF;
+
+  --text-primary: #1B2531;
+  --text-secondary: #2c3e50;
+  --text-muted: #9CA3AF;
+
+  --border-light: #F3F1ED;
+  --border-focus: #11763A;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-cairo);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+}
+
+/* Custom Scrollbar from v2.2.1 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F1ED;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #11763A;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d5a2c;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Animations from v2.2.1 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Management Tabs from v2.2.1 */
+.mgmt-tab {
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.mgmt-tab:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mgmt-tab.active {
+  background-color: white;
+  color: #11763A;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+  border-bottom: 3px solid #11763A;
+}
+
+/* RTL Helpers */
+[dir="rtl"] .ml-auto {
+  margin-right: auto;
+  margin-left: initial;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-left: auto;
+  margin-right: initial;
+}
+
+.font-number {
+  font-family: var(--font-inter);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
